@@ -16,7 +16,7 @@ namespace Task3
             bottleNumber = 0;
             day = 0;
 
-            weeksBottleNumber = BottleLoop(ref bottleNumber, ref day);
+            weeksBottleNumber = BottleLoop(bottleNumber, day);
 
             recyclingCost = weeksBottleNumber * 0.1;
 
@@ -31,14 +31,15 @@ namespace Task3
 
         }
 
-        private static float BottleLoop(ref float bottleNumber, ref float day)
+        private static Single BottleLoop(Single bottleNumber, Single day)
         {
             float todaysBottleNumber;
-            while (day >= 7)
+
+            while (day < 7)
             {
                 do
                 {
-                    Console.WriteLine("How many bottle's were recycled today?");
+                  Console.WriteLine("How many bottle's were recycled today?");
                 } while (!Single.TryParse(Console.ReadLine(), out todaysBottleNumber));
 
                 bottleNumber = bottleNumber + todaysBottleNumber;
